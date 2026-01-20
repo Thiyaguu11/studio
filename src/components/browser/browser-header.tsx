@@ -37,47 +37,34 @@ export function BrowserHeader({
   };
 
   return (
-    <header className="flex-shrink-0 rounded-b-lg overflow-hidden">
+    <header className="flex-shrink-0 rounded-b-lg overflow-hidden flex flex-col-reverse">
       {/* URL Bar & Nav Controls */}
-      <div className="flex items-center justify-between gap-2 p-2 bg-background">
-        <div className="flex items-center gap-2">
-            <Button onClick={() => onNavAction('back')} variant="ghost" size="icon" disabled={!activeTab || activeTab.historyIndex <= 0} aria-label="Back">
+      <div className="flex items-center justify-center gap-2 p-2 bg-background">
+        <Button onClick={() => onNavAction('back')} variant="ghost" size="icon" disabled={!activeTab || activeTab.historyIndex <= 0} aria-label="Back">
             <ArrowLeft className="w-5 h-5" />
-            </Button>
-            <Button onClick={() => onNavAction('forward')} variant="ghost" size="icon" disabled={!activeTab || activeTab.historyIndex >= activeTab.history.length - 1} aria-label="Forward">
+        </Button>
+        <Button onClick={() => onNavAction('forward')} variant="ghost" size="icon" disabled={!activeTab || activeTab.historyIndex >= activeTab.history.length - 1} aria-label="Forward">
             <ArrowRight className="w-5 h-5" />
-            </Button>
-            <Button onClick={() => onNavAction('refresh')} variant="ghost" size="icon" aria-label="Refresh">
+        </Button>
+        <Button onClick={() => onNavAction('refresh')} variant="ghost" size="icon" aria-label="Refresh">
             <RefreshCw className="w-5 h-5" />
-            </Button>
-        </div>
-        <div className="flex-grow flex justify-center">
-          <form onSubmit={handleURLSubmit} className="w-1/2 relative">
-            <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-            <Input
-              key={activeTab?.id} 
-              name="url"
-              defaultValue={activeTab?.url === 'leafy://homepage' ? '' : activeTab?.url}
-              placeholder="Search Google or type a URL"
-              className="w-full h-10 pl-9 pr-4 font-code text-sm bg-card"
-            />
-          </form>
-        </div>
-        <div className="flex items-center gap-2 invisible">
-            <Button variant="ghost" size="icon">
-                <ArrowLeft className="w-5 h-5" />
-            </Button>
-            <Button variant="ghost" size="icon">
-                <ArrowRight className="w-5 h-5" />
-            </Button>
-            <Button variant="ghost" size="icon">
-                <RefreshCw className="w-5 h-5" />
-            </Button>
+        </Button>
+        <div className="w-1/4">
+            <form onSubmit={handleURLSubmit} className="w-full relative">
+                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                <Input
+                key={activeTab?.id} 
+                name="url"
+                defaultValue={activeTab?.url === 'leafy://homepage' ? '' : activeTab?.url}
+                placeholder="Search Google or type a URL"
+                className="w-full h-10 pl-9 pr-4 font-code text-sm bg-card"
+                />
+            </form>
         </div>
       </div>
 
       {/* Tab Bar */}
-      <div className="flex items-center justify-center bg-card-foreground/5 px-2 pb-2">
+      <div className="flex items-center justify-center bg-card-foreground/5 px-2 pt-2">
         <div className="flex items-center">
           <div className="flex items-center -mt-px">
             {tabs.map((tab) => (
