@@ -40,11 +40,14 @@ export function HomePage({ onNavigate }: { onNavigate: (url: string) => void }) 
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-full text-foreground p-8">
-      <div className="flex-grow flex flex-col items-center justify-start pt-24 w-full max-w-2xl text-center">
-        <div className="text-9xl font-bold mb-4 text-glow">{time}</div>
-        <h1 className="text-5xl font-bold mb-8 text-glow">{greeting}</h1>
-        <form onSubmit={handleSearchSubmit} className="w-full relative mb-12">
+    <div className="flex flex-col h-full text-foreground p-8">
+      <div className="flex-grow flex flex-col items-center justify-center text-center">
+        <div className="text-9xl font-bold text-glow">{time}</div>
+        <h1 className="text-5xl font-bold mt-4 mb-8 text-glow">{greeting}</h1>
+        <QuickAccess onNavigate={onNavigate}/>
+      </div>
+      <div className="w-full max-w-2xl mx-auto flex-shrink-0 pb-4">
+        <form onSubmit={handleSearchSubmit} className="w-full relative">
           <Search className="absolute left-6 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
           <Input
             name="search"
@@ -55,7 +58,6 @@ export function HomePage({ onNavigate }: { onNavigate: (url: string) => void }) 
           />
            <Button type="submit" className="sr-only">Search</Button>
         </form>
-        <QuickAccess onNavigate={onNavigate}/>
       </div>
     </div>
   );

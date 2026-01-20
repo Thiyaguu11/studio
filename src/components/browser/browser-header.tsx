@@ -62,14 +62,15 @@ export function BrowserHeader({
       </div>
 
       {/* Tab Bar */}
-      <div className="flex items-center bg-card-foreground/5 pl-2 pb-2">
-        <div className="flex items-start -mt-px">
+      <div className="flex items-center bg-card-foreground/5 px-2 pb-2 gap-2">
+        <div className="flex-grow flex justify-center overflow-x-auto">
+          <div className="flex items-start -mt-px">
             {tabs.map((tab) => (
               <div
                 key={tab.id}
                 onClick={() => onSelectTab(tab.id)}
                 className={cn(
-                  "flex items-center gap-2 max-w-[200px] h-10 px-3 border-t-2 cursor-pointer transition-colors relative group",
+                  "flex items-center gap-2 max-w-[200px] h-10 px-3 border-t-2 cursor-pointer transition-colors relative group flex-shrink-0",
                   activeTabId === tab.id
                     ? "bg-background border-primary"
                     : "border-transparent hover:bg-background/50"
@@ -86,8 +87,9 @@ export function BrowserHeader({
                 </button>
               </div>
             ))}
+          </div>
         </div>
-        <Button onClick={onNewTab} variant="ghost" size="icon" className="h-8 w-8 ml-1 self-start mt-1 flex-shrink-0" aria-label="New tab">
+        <Button onClick={onNewTab} variant="ghost" size="icon" className="h-8 w-8 self-start mt-1 flex-shrink-0" aria-label="New tab">
           <Plus className="w-4 h-4" />
         </Button>
       </div>
