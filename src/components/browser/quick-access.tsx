@@ -1,17 +1,11 @@
 "use client";
 
-import { GoogleIcon } from "@/components/icons/google-icon";
-import { YouTubeIcon } from "@/components/icons/youtube-icon";
-import { GmailIcon } from "@/components/icons/gmail-icon";
-import { ChatGptIcon } from "@/components/icons/chatgpt-icon";
-import { GitHubIcon } from "@/components/icons/github-icon";
-
 const quickLinks = [
-  { name: "Google", url: "https://www.google.com", icon: GoogleIcon },
-  { name: "YouTube", url: "https://www.youtube.com", icon: YouTubeIcon },
-  { name: "Gmail", url: "https://mail.google.com", icon: GmailIcon },
-  { name: "ChatGPT", url: "https://chat.openai.com", icon: ChatGptIcon },
-  { name: "GitHub", url: "https://github.com", icon: GitHubIcon },
+  { name: "Google", url: "https://www.google.com" },
+  { name: "YouTube", url: "https://www.youtube.com" },
+  { name: "Gmail", url: "https://mail.google.com" },
+  { name: "ChatGPT", url: "https://chat.openai.com" },
+  { name: "GitHub", url: "https://github.com" },
 ];
 
 type QuickAccessProps = {
@@ -25,13 +19,10 @@ export function QuickAccess({ onNavigate }: QuickAccessProps) {
         <button
           key={link.name}
           onClick={() => onNavigate(link.url)}
-          className="group flex flex-col items-center gap-3 p-4 rounded-full transition-all duration-300 hover:bg-primary/10"
+          className="group flex items-center justify-center px-6 py-3 bg-card rounded-lg border border-border shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg hover:border-primary hover:shadow-primary/20"
           aria-label={`Open ${link.name}`}
         >
-          <div className="flex items-center justify-center w-16 h-16 bg-card rounded-full border border-border shadow-md transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:border-primary group-hover:shadow-primary/20">
-            <link.icon className="w-8 h-8 text-foreground/90 transition-all duration-300 group-hover:text-primary-foreground group-hover:drop-shadow-[0_0_8px_hsl(var(--primary))] group-hover:scale-110" />
-          </div>
-          <span className="text-sm font-medium text-foreground/80 transition-colors group-hover:text-foreground">{link.name}</span>
+          <span className="text-base font-medium text-foreground/90 transition-colors group-hover:text-foreground group-hover:text-glow">{link.name}</span>
         </button>
       ))}
     </div>
