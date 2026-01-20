@@ -41,18 +41,16 @@ export function HomePage({ onNavigate }: { onNavigate: (url: string) => void }) 
   };
 
   return (
-    <div className="flex flex-col h-full text-foreground p-8">
+    <div className="relative flex flex-col h-full text-foreground p-8">
        <div className="w-full text-center">
         <div className="text-9xl font-bold">{time}</div>
       </div>
-      <div className="flex-grow flex flex-row items-center justify-center text-center gap-24">
-        <div className="flex flex-col items-center">
-            <h1 className="text-5xl font-bold mb-8 text-glow">{greeting}</h1>
-            <QuickAccess onNavigate={onNavigate}/>
-        </div>
-        <div className="h-2/3 w-72">
-            <SpotifyWidget />
-        </div>
+      <div className="flex-grow flex flex-col items-center justify-center text-center">
+        <h1 className="text-5xl font-bold mb-8">{greeting}</h1>
+        <QuickAccess onNavigate={onNavigate}/>
+      </div>
+      <div className="absolute top-1/2 right-8 -translate-y-1/2 h-2/3 w-64">
+        <SpotifyWidget />
       </div>
       <div className="w-full max-w-2xl mx-auto flex-shrink-0 pb-4">
         <form onSubmit={handleSearchSubmit} className="w-full relative">
