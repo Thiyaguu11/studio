@@ -126,16 +126,6 @@ export function BrowserWindow() {
 
   return (
     <Card className="flex flex-col h-full w-full bg-card shadow-2xl overflow-hidden">
-      <BrowserHeader
-        tabs={tabs}
-        activeTabId={activeTabId}
-        activeTab={activeTab}
-        onSelectTab={setActiveTabId}
-        onCloseTab={handleRemoveTab}
-        onNewTab={() => handleAddTab()}
-        onNavigate={handleNavigate}
-        onNavAction={handleNavAction}
-      />
       <CardContent className="p-0 flex-grow relative bg-background">
         {tabs.map(tab => (
             <BrowserContent 
@@ -148,6 +138,16 @@ export function BrowserWindow() {
             />
         ))}
       </CardContent>
+      <BrowserHeader
+        tabs={tabs}
+        activeTabId={activeTabId}
+        activeTab={activeTab}
+        onSelectTab={setActiveTabId}
+        onCloseTab={handleRemoveTab}
+        onNewTab={() => handleAddTab()}
+        onNavigate={handleNavigate}
+        onNavAction={handleNavAction}
+      />
     </Card>
   );
 }
