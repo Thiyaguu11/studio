@@ -43,7 +43,6 @@ export function BrowserContent({ tab, isActive, onNavigate, iframeRef, onTitleCh
       title={tab.title}
       onLoad={handleLoad}
       className={cn("w-full h-full border-0 bg-white", isActive ? "block" : "hidden")}
-      sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
     />
   );
 }
