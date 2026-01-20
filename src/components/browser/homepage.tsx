@@ -41,9 +41,11 @@ export function HomePage({ onNavigate }: { onNavigate: (url: string) => void }) 
 
   return (
     <div className="flex flex-col h-full text-foreground p-8">
+       <div className="w-full text-center">
+        <div className="text-9xl font-bold text-glow">{time}</div>
+      </div>
       <div className="flex-grow flex flex-col items-center justify-center text-center">
-        <div className="text-9xl font-bold">{time}</div>
-        <h1 className="text-5xl font-bold mt-4 mb-8 text-glow">{greeting}</h1>
+        <h1 className="text-5xl font-bold mb-8 text-glow">{greeting}</h1>
         <QuickAccess onNavigate={onNavigate}/>
       </div>
       <div className="w-full max-w-2xl mx-auto flex-shrink-0 pb-4">
