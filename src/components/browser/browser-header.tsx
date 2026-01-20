@@ -64,7 +64,7 @@ export function BrowserHeader({
       {/* Tab Bar */}
       <div className="flex items-center bg-card-foreground/5 px-2 pb-2 gap-2">
         <div className="flex-grow flex justify-center overflow-x-auto">
-          <div className="flex items-start -mt-px">
+          <div className="flex items-center -mt-px">
             {tabs.map((tab) => (
               <div
                 key={tab.id}
@@ -87,11 +87,11 @@ export function BrowserHeader({
                 </button>
               </div>
             ))}
+            <Button onClick={onNewTab} variant="ghost" size="icon" className="h-8 w-8 ml-2 flex-shrink-0" aria-label="New tab">
+              <Plus className="w-4 h-4" />
+            </Button>
           </div>
         </div>
-        <Button onClick={onNewTab} variant="ghost" size="icon" className="h-8 w-8 self-start mt-1 flex-shrink-0" aria-label="New tab">
-          <Plus className="w-4 h-4" />
-        </Button>
       </div>
     </header>
   );
