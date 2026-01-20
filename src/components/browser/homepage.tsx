@@ -42,8 +42,8 @@ export function HomePage({ onNavigate }: { onNavigate: (url: string) => void }) 
   return (
     <div className="flex flex-col items-center justify-center h-full text-foreground p-8">
       <div className="flex-grow flex flex-col items-center justify-center w-full max-w-2xl text-center">
-        <div className="text-8xl font-bold mb-4">{time}</div>
-        <h1 className="text-5xl font-bold mb-8">{greeting}</h1>
+        <div className="text-9xl font-bold mb-4 text-glow">{time}</div>
+        <h1 className="text-5xl font-bold mb-8 text-glow">{greeting}</h1>
         <form onSubmit={handleSearchSubmit} className="w-full relative mb-12">
           <Search className="absolute left-6 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
           <Input
@@ -51,7 +51,7 @@ export function HomePage({ onNavigate }: { onNavigate: (url: string) => void }) 
             type="search"
             autoFocus
             placeholder="Search Google"
-            className="w-full h-16 pl-14 pr-6 text-lg rounded-full bg-card border-2"
+            className="w-full h-16 pl-14 pr-6 text-lg rounded-full bg-card border-2 focus:border-primary focus:shadow-[0_0_20px_hsl(var(--primary)/0.5)] transition-shadow"
           />
            <Button type="submit" className="sr-only">Search</Button>
         </form>

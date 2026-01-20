@@ -25,13 +25,13 @@ export function QuickAccess({ onNavigate }: QuickAccessProps) {
         <button
           key={link.name}
           onClick={() => onNavigate(link.url)}
-          className="group flex flex-col items-center gap-3 p-4 rounded-2xl transition-all duration-200 hover:bg-white/5"
+          className="group flex flex-col items-center gap-3 p-4 rounded-full transition-all duration-300 hover:bg-primary/10"
           aria-label={`Open ${link.name}`}
         >
-          <div className="flex items-center justify-center w-16 h-16 bg-card rounded-full border border-border shadow-md transition-all duration-200 group-hover:scale-110 group-hover:shadow-lg group-hover:border-primary/50">
-            <link.icon className="w-8 h-8 text-foreground/90" />
+          <div className="flex items-center justify-center w-16 h-16 bg-card rounded-full border border-border shadow-md transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:border-primary group-hover:shadow-primary/20">
+            <link.icon className="w-8 h-8 text-foreground/90 transition-all duration-300 group-hover:text-primary-foreground group-hover:drop-shadow-[0_0_8px_hsl(var(--primary))] group-hover:scale-110" />
           </div>
-          <span className="text-sm font-medium text-foreground/80">{link.name}</span>
+          <span className="text-sm font-medium text-foreground/80 transition-colors group-hover:text-foreground">{link.name}</span>
         </button>
       ))}
     </div>
