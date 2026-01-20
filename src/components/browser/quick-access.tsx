@@ -28,7 +28,7 @@ export function QuickAccess({ onNavigate }: QuickAccessProps) {
           className="group flex flex-col items-center gap-3 p-4 rounded-2xl transition-all duration-200 hover:bg-white/5"
           aria-label={`Open ${link.name}`}
         >
-          <div className="flex items-center justify-center w-16 h-16 bg-card rounded-2xl border border-border shadow-md transition-all duration-200 group-hover:scale-110 group-hover:shadow-lg group-hover:border-primary/50">
+          <div className="flex items-center justify-center w-16 h-16 bg-card rounded-full border border-border shadow-md transition-all duration-200 group-hover:scale-110 group-hover:shadow-lg group-hover:border-primary/50">
             <link.icon className="w-8 h-8 text-foreground/90" />
           </div>
           <span className="text-sm font-medium text-foreground/80">{link.name}</span>

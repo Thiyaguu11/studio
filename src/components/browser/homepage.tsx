@@ -41,9 +41,9 @@ export function HomePage({ onNavigate }: { onNavigate: (url: string) => void }) 
 
   return (
     <div className="flex flex-col items-center justify-center h-full text-foreground p-8">
-      <div className="absolute top-8 right-8 text-2xl font-medium">{time}</div>
-      <div className="flex-grow flex flex-col items-center justify-center w-full max-w-2xl">
-        <h1 className="text-5xl font-bold mb-6">{greeting}</h1>
+      <div className="flex-grow flex flex-col items-center justify-center w-full max-w-2xl text-center">
+        <div className="text-8xl font-bold mb-4">{time}</div>
+        <h1 className="text-5xl font-bold mb-8">{greeting}</h1>
         <form onSubmit={handleSearchSubmit} className="w-full relative mb-12">
           <Search className="absolute left-6 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
           <Input
