@@ -5,6 +5,7 @@ import { Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { QuickAccess } from "./quick-access";
 import { Button } from "../ui/button";
+import { SpotifyWidget } from "../widgets/spotify-widget";
 
 const getGreeting = () => {
   const hour = new Date().getHours();
@@ -44,9 +45,14 @@ export function HomePage({ onNavigate }: { onNavigate: (url: string) => void }) 
        <div className="w-full text-center">
         <div className="text-9xl font-bold">{time}</div>
       </div>
-      <div className="flex-grow flex flex-col items-center justify-center text-center">
-        <h1 className="text-5xl font-bold mb-8 text-glow">{greeting}</h1>
-        <QuickAccess onNavigate={onNavigate}/>
+      <div className="flex-grow flex flex-row items-center justify-center text-center gap-24">
+        <div className="flex flex-col items-center">
+            <h1 className="text-5xl font-bold mb-8 text-glow">{greeting}</h1>
+            <QuickAccess onNavigate={onNavigate}/>
+        </div>
+        <div className="h-2/3 w-72">
+            <SpotifyWidget />
+        </div>
       </div>
       <div className="w-full max-w-2xl mx-auto flex-shrink-0 pb-4">
         <form onSubmit={handleSearchSubmit} className="w-full relative">
